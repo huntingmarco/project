@@ -1,0 +1,4 @@
+<p><%= project_task.content %></p>
+<p><%= project_task.deadline %></p>
+<p><%= project_task.myfile %></p>
+<%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?" } %>

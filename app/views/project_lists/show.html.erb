@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project_list.description %>
+</p>
+
+<div id="project_tasks_wrapper">
+ <%= render @project_list.project_tasks %>
+ <div id="form">
+  <%= render "project_tasks/form" %>
+ </div>
+</div>
+
+<%= link_to 'Edit', edit_project_list_path(@project_list) %> |
+<%= link_to 'Back', project_lists_path %>
