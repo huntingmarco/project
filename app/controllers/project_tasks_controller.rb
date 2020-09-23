@@ -1,5 +1,6 @@
 class ProjectTasksController < ApplicationController
     before_action :set_project_list
+    before_action :set_project_task, except: [:create]
     def create
      @project_task = @project_list.project_tasks.create(project_task_params)
      redirect_to @project_list
@@ -15,11 +16,19 @@ class ProjectTasksController < ApplicationController
         redirect_to @project_list 
     end
 
+    def done
+        @project_task.update_attribute(:done_at, Time.now)
+        redirect_to @project_list, notice: "Project task done"
+    end
+
     private
     def set_project_list
      @project_list = ProjectList.find(params[:project_list_id])
     end
 
+    def set_project_task
+        @project_task = @project_list.project_tasks.find(params[:id])
+    end
 
     def project_task_params
      params[:project_task].permit(:content, :deadline, :myfile)
