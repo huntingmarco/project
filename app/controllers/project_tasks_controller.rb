@@ -31,7 +31,7 @@ class ProjectTasksController < ApplicationController
     end
 
     def project_task_params
-     params[:project_task].permit(:content, :deadline, :myfile)
+     params[:project_task].permit(:content, :deadline, file:[])
     end
 
 end

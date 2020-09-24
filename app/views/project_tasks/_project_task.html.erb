@@ -16,7 +16,9 @@
   <div class="project_task">
    <p><%= project_task.content %></p>
    <p><%= project_task.deadline %></p>
-    <p><%= project_task.myfile %></p>
+   <% project_task.file.each do |file|  %> 
+    <%= link_to file.filename, file %>
+    <% end %>
   </div>
   <div class="trash">
    <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?" } %>
