@@ -6,6 +6,10 @@ ruby '2.7.0'
 gem 'pg'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
+gem 'omniauth' 
+gem 'omniauth-facebook'
+gem 'activerecord-session_store'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
