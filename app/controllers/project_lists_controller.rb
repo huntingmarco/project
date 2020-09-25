@@ -1,6 +1,7 @@
 class ProjectListsController < ApplicationController
   before_action :set_project_list, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  
   # GET /project_lists
   # GET /project_lists.json
   def index
@@ -14,7 +15,7 @@ class ProjectListsController < ApplicationController
 
   # GET /project_lists/new
   def new
-    @project_list = ProjectList.new
+    @project_list = current_user.project_lists.build
   end
 
   # GET /project_lists/1/edit
@@ -24,7 +25,7 @@ class ProjectListsController < ApplicationController
   # POST /project_lists
   # POST /project_lists.json
   def create
-    @project_list = ProjectList.new(project_list_params)
+    @project_list = current_user.project_lists.build(project_list_params)
 
     respond_to do |format|
       if @project_list.save
