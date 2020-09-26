@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   end
 
   root "project_lists#index" 
-
 end

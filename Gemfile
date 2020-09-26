@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 gem 'pg'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 gem 'omniauth' 
 gem 'omniauth-facebook'

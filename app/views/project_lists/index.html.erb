@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user %>
 <h1>Project Lists</h1>
-
 <table>
   <thead>
     <tr>
@@ -12,21 +12,24 @@
   </thead>
 
   <tbody>
-    <% @project_lists.each do |project_list| %>
-      <% if project_list.user == current_user %>
-      <tr>
-        <td><%= project_list.title %></td>
-        <td><%= project_list.description %></td>
-        <td><%= project_list.user.email %></td>
-        <td><%= link_to 'Show', project_list %></td>
-        <td><%= link_to 'Edit', edit_project_list_path(project_list) %></td>
-        <td><%= link_to 'Destroy', project_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    
+      <% @project_lists.each do |project_list| %>
+        <% if project_list.user == current_user %>
+        <tr>
+          <td><%= project_list.title %></td>
+          <td><%= project_list.description %></td>
+          <td><%= project_list.user.email %></td>
+          <td><%= link_to 'Show', project_list %></td>
+          <td><%= link_to 'Edit', edit_project_list_path(project_list) %></td>
+          <td><%= link_to 'Destroy', project_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
       <% end %>
-    <% end %>
+   
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Project List', new_project_list_path %>
+<% end %>  

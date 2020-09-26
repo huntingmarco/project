@@ -1,6 +1,7 @@
 class ProjectTasksController < ApplicationController
     before_action :set_project_list
     before_action :set_project_task, except: [:create]
+
     def create
      @project_task = @project_list.project_tasks.create(project_task_params)
      redirect_to @project_list
@@ -13,7 +14,16 @@ class ProjectTasksController < ApplicationController
         else
          flash[:error] = "Project List task could not be deleted."
         end
+
+        #disable this redirect_to when using ajax
         redirect_to @project_list 
+
+        #using ajax
+        #respond_to do |format|
+        #    format.html { redirect_to @project_list }
+        #    format.js
+        #  end
+        #using ajax
     end
 
     def done
