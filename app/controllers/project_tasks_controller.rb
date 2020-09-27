@@ -4,8 +4,13 @@ class ProjectTasksController < ApplicationController
 
     def create
      @project_task = @project_list.project_tasks.create(project_task_params)
-     redirect_to @project_list
-     
+     #redirect_to @project_list
+     respond_to do |format|
+        #format.js { render 'project_tasks/_project_task', project_task: @project_task}
+        format.js
+        #format.html { redirect_to @project_list, notice: 'Project task was successfully created.' }
+        format.json { head :no_content }
+      end
     end
 
     def destroy
@@ -17,7 +22,7 @@ class ProjectTasksController < ApplicationController
         #end
         @project_task.destroy
         respond_to do |format|
-            #format.js 
+            format.js 
             format.html { redirect_to @project_list, notice: 'Project list was successfully destroyed.' }
             format.json { head :no_content }
           end
