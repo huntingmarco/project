@@ -1,21 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Project Title:</strong>
   <%= @project_list.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Project Description:</strong>
   <%= @project_list.description %>
 </p>
-
+<hr>
+<p>
+  <strong>Task Listing</strong>
+</p>
 <div id="project_tasks_wrapper">
  <%= render @project_list.project_tasks %>
  <div id="form">
   <%= render "project_tasks/form" %>
  </div>
-</div>
 
-<%= link_to 'Edit', edit_project_list_path(@project_list) %> |
-<%= link_to 'Back', project_lists_path %>
+
+</div>
+<hr>
+<br>
+
+
+<%= link_to("Back", project_lists_path, 
+          class: "btn btn-xs btn-warning") %>

@@ -1,29 +1,30 @@
-<div class="row clearfix">
- <% if project_task.done? %>
-  <div class="done">
-   <%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch %>
-  </div>
-  <div class="project_task">
-   <p style="opacity: 0.4;"><strike><%= project_task.content %></strike></p>
-  </div>
-  <div class="trash">
-   <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
- <% else %>
- <%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch %>
- <div class="done">
-   
- </div>
- <div class="project_task">
-  <p><%= project_task.content %></p>
-  <p><%= project_task.deadline %></p>
-  <% project_task.file.each do |file|  %> 
-   <%= link_to file.filename, file %>
-   <% end %>
- </div>
 
-  <div class="trash">
-   <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
- <% end %>
+<div class="row clearfix">
+<table  id="<% project_task.id %>" class="table table-bordered">
+<tr id="<% project_task.id %>">   
+    <td>
+      <% if project_task.done? %>
+        <p><strike>Mark as Done</strike><p>
+      <% else %>
+      <%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch %>
+      <% end %>
+      </td>
+    <td>
+        <% if project_task.done? %>
+        <p style="opacity: 0.4;"><strike><%= project_task.content %></strike></p>
+        <% else %>
+          <p><%= project_task.content %></p>
+        <% end %>
+        <p>Deadline:<%= project_task.deadline %></p>
+        <% project_task.file.each do |file|  %> 
+        <%= link_to file.filename, file %>
+        <% end %>
+    </td>
+    <td>
+    
+    <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?"},class: 'css_class', style: 'color:red' %>
+    </td>
+ </tr>
+
+</table>
 </div>

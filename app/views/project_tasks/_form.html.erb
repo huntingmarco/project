@@ -1,6 +1,13 @@
 <%= form_for([@project_list, @project_list.project_tasks.build]) do |f| %>
-	<%= f.text_field :content, placeholder: "New Task" %>
-	<%= f.datetime_select :deadline, placeholder: "Deadline" %>
-	<%= f.file_field :file, multiple: true %>
+	<div class="field">
+		<p>Add Task:<%= f.text_field :content, placeholder: "New Task" %></p>
+	</div>
+	<div class="field">
+		<p>Deadline:<%= f.datetime_select :deadline, placeholder: "Deadline" %></p>
+	</div>
+	<div class="field">
+		<p>Files:<%= f.file_field :file, multiple: true, direct_upload: true %></p>
+	</div>
 	<%= f.submit %>
+	<br>
 <% end %>

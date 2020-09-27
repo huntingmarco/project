@@ -5,18 +5,25 @@ class ProjectTasksController < ApplicationController
     def create
      @project_task = @project_list.project_tasks.create(project_task_params)
      redirect_to @project_list
+     
     end
 
     def destroy
         @project_task = @project_list.project_tasks.find(params[:id])
-        if @project_task.destroy
-         flash[:success] = "Project List task was deleted."
-        else
-         flash[:error] = "Project List task could not be deleted."
-        end
+        #if @project_task.destroy
+        # flash[:success] = "Project List task was deleted."
+        #else
+        # flash[:error] = "Project List task could not be deleted."
+        #end
+        @project_task.destroy
+        respond_to do |format|
+            #format.js 
+            format.html { redirect_to @project_list, notice: 'Project list was successfully destroyed.' }
+            format.json { head :no_content }
+          end
 
         #disable this redirect_to when using ajax
-        redirect_to @project_list 
+        #redirect_to @project_list 
 
         #using ajax
         #respond_to do |format|

@@ -11,6 +11,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'activerecord-session_store'
 
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'rails-ujs', '~> 5.1.0.beta1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
