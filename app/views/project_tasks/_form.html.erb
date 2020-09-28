@@ -7,7 +7,7 @@
 		<p>Deadline:<%= f.datetime_select :deadline, placeholder: "Deadline" %></p>
 	</div>
 	<div class="field">
-		<p>Files:<%= f.file_field :file, multiple: true, direct_upload: true %></p>
+		<p>Files:<%= f.file_field :file, multiple: true %></p>
 	</div>
 	<%= f.submit %>
 	<br>
