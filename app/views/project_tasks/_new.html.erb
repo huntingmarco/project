@@ -1,12 +1,12 @@
-<tr id="<%= project_task.id %>">   
-    <td>
+<tr id="<%= project_task.id %>" style="border: 1px solid lightgray;">   
+    <td style="width: 350px;">
       <% if project_task.done? %>
         <p><strike>Mark as Done</strike><p>
       <% else %>
       <%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch %>
       <% end %>
       </td>
-    <td>
+    <td style="width: 350px;">
         <% if project_task.done? %>
         <p style="opacity: 0.4;"><strike><%= project_task.content %></strike></p>
         <% else %>
@@ -17,7 +17,7 @@
         <%= link_to file.filename, file %>
         <% end %>
     </td>
-    <td>
+    <td style="width: 350px;">
     
     <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?",remote: true},class: 'css_class', style: 'color:red' %>
     </td>
