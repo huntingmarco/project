@@ -9,6 +9,11 @@
 #adapter: sqlite3
 #  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 #  timeout: 5000
+default: &default
+    adapter: postgresql
+    timeout: 1000
+    pool: 5
+
 
 #development:
 #  <<: *default
