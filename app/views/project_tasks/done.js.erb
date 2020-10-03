@@ -1,0 +1,3 @@
+$('tr#<%= j @project_task.id %> p#marking').text('Mark as Done');
+$('tr#<%= j @project_task.id %> p').css('opacity','0.4');
+$('tr#<%= j @project_task.id %> p').wrap('<strike>');

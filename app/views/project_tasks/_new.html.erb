@@ -1,18 +1,21 @@
 <tr id="<%= project_task.id %>" style="border: 1px solid lightgray;">   
     <td style="width: 350px;">
       <% if project_task.done? %>
-        <p><strike>Mark as Done</strike><p>
+            <p style="opacity: 0.4;"><strike>Mark as Done</strike><p>
       <% else %>
-      <%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch %>
+          <p id="marking"><%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch, remote: true %></p>
       <% end %>
       </td>
     <td style="width: 350px;">
         <% if project_task.done? %>
-        <p style="opacity: 0.4;"><strike><%= project_task.content %></strike></p>
+              <p style="opacity: 0.4;"><strike><%= project_task.content %></strike></p>
+              <p style="opacity: 0.4;"><strike>Deadline:<%= project_task.deadline %></strike></p>
         <% else %>
-          <p><%= project_task.content %></p>
+              <p><%= project_task.content %></p>
+              <p>Deadline:<%= project_task.deadline %></p>
         <% end %>
-        <p>Deadline:<%= project_task.deadline %></p>
+
+      
         <% project_task.file.each do |file|  %> 
         <%= link_to file.filename, file %>
         <% end %>

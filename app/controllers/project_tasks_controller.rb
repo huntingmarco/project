@@ -40,7 +40,10 @@ class ProjectTasksController < ApplicationController
 
     def done
         @project_task.update_attribute(:done_at, Time.now)
-        redirect_to @project_list, notice: "Project task done"
+        respond_to do |format|
+            format.js
+            #redirect_to @project_list, notice: "Project task done"
+        end
     end
 
     private
