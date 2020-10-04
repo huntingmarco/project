@@ -1,0 +1,5 @@
+$('#new-project form').remove();
+$('.btn-danger').bind('ajax:success', function(){
+  $(this).closest('tr').remove();
+});
+$('#new-project a').hide().parent().append("<%= j render 'form', project_list: @project_list %>")
