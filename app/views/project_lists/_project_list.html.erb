@@ -1,7 +1,7 @@
 
 
     <% if project_list.user == current_user %>
-    <tr>
+    <tr id="<%= project_list.id %>">
       <td><%= project_list.title %></td>
       <td><%= project_list.description %></td>
       <td><%= project_list.user.email %></td>

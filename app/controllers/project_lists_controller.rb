@@ -43,13 +43,7 @@ class ProjectListsController < ApplicationController
   def update
     respond_to do |format|
       if @project_list.update(project_list_params)
-        #----------------------------
-        #To figure out how to pass id from controller to jquery
-        #----------------------------
-        #format.js { render 'update.js.erb',  project_list_params: @project_list_params}
-        #----------------------------
-        format.html { redirect_to project_lists_url, notice: 'Project list was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project_list }
+        format.js
       else
         format.js { render 'displaymessages.js.erb' }
        
