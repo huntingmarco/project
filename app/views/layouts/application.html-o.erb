@@ -12,12 +12,10 @@
   <body>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-     
-      <div class="navbar-header">
-     
-        <%= link_to  image_tag('logo.png'), root_path, class: "navbar-brand" %>
-    </div>
-      
+      <div class="container">
+        
+        <%= link_to 'Project Tracker', root_path, class: "navbar-brand" %>
+        
         <% if user_signed_in? %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,6 +23,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           
+
+        
           <li class="col-md-8 user-name text-right">
             <i class="fa fa-user"></i>
             <%= current_user.email %>
@@ -44,20 +44,9 @@ class: "btn btn-xs btn-warning", method: :delete) %></li>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-   
-      <div class="Welcome">
-        <h3>Project Task Management</h3>
-        <ul>
-              <li>HTML5, CSS3, Bootstrap, JavaScript/jQuery on Client-Side;</li>
-              <li>Ruby Rails on Server-Side;</li>
-              <li>Postgres for Database.</li>
-        </ul>
-      </div>
-    
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-          <%= yield %>
-      </div>
+  
+
+        <%= yield %>
     </div>
 
   </body>

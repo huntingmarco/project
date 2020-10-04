@@ -17,7 +17,9 @@
  *= require font-awesome
  */
 
-
+ body {
+  list-style-type:none;
+}
 .container_log {
     border-radius: 5px;
     background-color: white;
@@ -26,12 +28,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-body {
+/*body {
   font-family: 'Lato', sans-serif;
   background-image: url(asset_path('background.jpg'));
   background-size: cover;
   list-style-type:none;
-}
+}*/
 
 /* direct_uploads.css */
  

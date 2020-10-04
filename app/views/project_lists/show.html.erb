@@ -16,7 +16,14 @@
 </p>
 <div id="project_tasks_wrapper">
 
-<table><tr><td style="width: 350px;"></td><td style="width: 350px;"></td><td style="width: 350px;"></td></tr></table>
+<table><thead class="thead-dark">
+<tr>
+  <th>Marking</th>
+  <th>Task Content</th>
+  <th colspan="3"></th>
+</tr>
+</thead>
+<tr><td style="width: 350px;"></td><td style="width: 350px;"></td><td style="width: 350px;"></td></tr></table>
  <%= render @project_list.project_tasks %>
  <div id="form">
   <%= render "project_tasks/form" %>
