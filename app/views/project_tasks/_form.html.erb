@@ -1,5 +1,10 @@
+
+
 <hr>
 <%= form_for([@project_list, @project_list.project_tasks.build],:remote=>true) do |f| %>
+	
+
+	
 	<div class="field">
 		<p>Add Task:<%= f.text_field :content, placeholder: "New Task" %></p>
 	</div>

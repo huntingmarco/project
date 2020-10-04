@@ -1,15 +1,8 @@
-<%= form_with(model: project_list) do |form| %>
-  <% if project_list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project_list.errors.count, "error") %> prohibited this project_list from being saved:</h2>
 
-      <ul>
-        <% project_list.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+
+<%= form_with(model: project_list) do |form| %>
+
 
   <div class="field">
     <%= form.label :title %>
@@ -20,6 +13,8 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+
+  <span id="helpBlock" class="help-block"></span>
 
   <div class="actions">
     <%= form.submit %>

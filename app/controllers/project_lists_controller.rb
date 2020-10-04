@@ -29,14 +29,9 @@ class ProjectListsController < ApplicationController
 
     respond_to do |format|
       if @project_list.save
-        #format.html { redirect_to @project_list, notice: 'Project list was successfully created.' }
-        #format.html { redirect_to project_lists_url, notice: 'Project list was successfully created.' }
         format.js
-        format.html { redirect_to @project_list, notice: 'Project list was successfully created.' }
-        format.json { render :show, status: :created, location: @project_list }
       else
-        format.html { render :new }
-        format.json { render json: @project_list.errors, status: :unprocessable_entity }
+        format.js { render 'displaymessages.js.erb' }
       end
     end
   end
@@ -46,7 +41,6 @@ class ProjectListsController < ApplicationController
   def update
     respond_to do |format|
       if @project_list.update(project_list_params)
-        #format.html { redirect_to @project_list, notice: 'Project list was successfully updated.' }
         format.html { redirect_to project_lists_url, notice: 'Project list was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_list }
       else
@@ -59,12 +53,13 @@ class ProjectListsController < ApplicationController
   # DELETE /project_lists/1
   # DELETE /project_lists/1.json
   def destroy
-    @project_list.destroy
+   
     respond_to do |format|
-      format.js 
-      format.html { redirect_to project_lists_url, notice: 'Project list was successfully destroyed.' }
-      format.json { head :no_content }
+    
+      @project_list.destroy
+        format.js 
     end
+  
   end
 
   private
@@ -77,4 +72,6 @@ class ProjectListsController < ApplicationController
     def project_list_params
       params.require(:project_list).permit(:title, :description)
     end
+
+    
 end

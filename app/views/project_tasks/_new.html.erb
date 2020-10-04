@@ -3,7 +3,7 @@
       <% if project_task.done? %>
             <p style="opacity: 0.4;"><strike>Mark as Done</strike><p>
       <% else %>
-          <p id="marking"><%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch, remote: true %></p>
+          <p id="marking" ><%= link_to "Mark as Done", done_project_list_project_task_path(@project_list, project_task.id), method: :patch, remote: true, style: 'color:blue' %></p>
       <% end %>
       </td>
     <td style="width: 350px;">
@@ -22,6 +22,6 @@
     </td>
     <td style="width: 350px;">
     
-    <%= link_to "Delete", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?",remote: true},class: 'btn btn-danger' %>
+    <%= link_to "X", project_list_project_task_path(@project_list, project_task.id), method: :delete, data: { confirm: "Are you sure?",remote: true},class: 'btn btn-danger' %>
     </td>
  </tr>

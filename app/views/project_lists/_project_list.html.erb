@@ -1,12 +1,13 @@
 
+
     <% if project_list.user == current_user %>
     <tr>
       <td><%= project_list.title %></td>
       <td><%= project_list.description %></td>
       <td><%= project_list.user.email %></td>
-      <td><%= link_to 'Show Task', project_list,class: 'btn btn-info' %>
+      <td><%= link_to 'Show/Add Task', project_list,class: 'btn btn-info' %>
       <%= link_to 'Edit', edit_project_list_path(project_list),class: 'btn btn-warning' %>
-      <%= link_to 'Delete', project_list, method: :delete, data: { confirm: 'Are you sure?', remote: true },class: 'btn btn-danger' %></td>
+      <%= link_to 'X', project_list, method: :delete, data: { confirm: 'Are you sure?', remote: true },class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
 
