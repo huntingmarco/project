@@ -5,7 +5,12 @@ class ProjectTasksController < ApplicationController
     def create
      @project_task = @project_list.project_tasks.create(project_task_params)
      respond_to do |format|
-        format.js
+        if @project_task.save
+            format.js
+        else
+            #flash[:msg] = "invalid"
+            format.js { render 'displaymessages.js.erb' }
+        end
       end
     end
 

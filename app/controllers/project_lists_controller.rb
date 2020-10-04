@@ -31,7 +31,9 @@ class ProjectListsController < ApplicationController
       if @project_list.save
         format.js
       else
+        #flash[:msg] = "invalid"
         format.js { render 'displaymessages.js.erb' }
+        
       end
     end
   end

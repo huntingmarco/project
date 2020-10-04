@@ -1,9 +1,8 @@
-alert('to display messages.');
 
 //remove old validation messages
 $(".notice").remove();
  
 //display new validation messages
-<% @project_list.errors.full_messages.each do |message| %>
-$('#helpBlock').append("<div class='notice'><%= escape_javascript(message)%></div>");
+<% @project_task.errors.full_messages.each do |message| %>
+$('#helpBlock').append("<div class='notice' style='color:red;'><%= escape_javascript(message)%></div>");
 <% end %>
