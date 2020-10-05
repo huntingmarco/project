@@ -5,7 +5,8 @@ RSpec.describe ProjectTask, :type => :model do
   subject {
     described_class.new(content: "Anything",
                         deadline: DateTime.now,
-                        project_list_id: 1)
+                        created_at: DateTime.now,
+                        updated_at: DateTime.now)
   }
 
   it "is valid with valid attributes" do
@@ -22,13 +23,6 @@ RSpec.describe ProjectTask, :type => :model do
     expect(subject).to_not be_valid
   end
 
-  it "is not valid without a project list id" do
-    subject.project_list_id = nil
-    expect(subject).to_not be_valid
-  end
 
-  describe "Associations" do
-    it { should belong_to(:project_list) }
-  end
 
 end

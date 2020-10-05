@@ -24,14 +24,8 @@ RSpec.describe ProjectList, :type => :model do
 
   describe "Associations" do
     it { should belong_to(:user).without_validating_presence }
-    it { should have_many(:project_tasks) }
+    it { should have_many(:project_tasks).dependent(:destroy) }
   end
 
-  describe "GET index" do
-    it "has a 200 status code" do
-      get :index
-      expect(response.status).to eq(200)
-    end
-  end
   
 end
