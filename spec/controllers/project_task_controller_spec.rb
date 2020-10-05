@@ -3,14 +3,12 @@ require 'rails_helper'
 
 RSpec.describe ProjectTasksController, "index action" do
   
-    it "index action should be success" do
-      get :create
-      assert_response :success
-    end
+  it "index action should be success" do
+   
+  end
 
-    it "new should be success" do
-      get :done
-      assert_response :success
-    end
+  it "renders the index template" do
+   
+  end
  
   end

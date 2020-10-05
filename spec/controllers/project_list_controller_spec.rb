@@ -8,16 +8,15 @@ RSpec.describe ProjectListsController, "index action" do
       assert_response :success
     end
 
-    it "new should be success" do
-      get new_project_list_url
-      assert_response :success
-    end
-
-    #describe "GET index" do
-    #  it "has a 200 status code" do
-    #    get :index
-    #    expect(response.status).to eq(200)
-    #  end
+    #it "assigns @project_lists" do
+    #  project_list = ProjectLists.create(title: “Test user”)
+    #  get :index
+    #  expect(assigns(:project_lists)).to eq([project_list])
     #end
+    
+    it "renders the index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
  
   end
