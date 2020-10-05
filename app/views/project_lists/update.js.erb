@@ -1,3 +1,4 @@
 $('tr#<%= j @project_list.id %>').remove();
 $('table#project_lists tbody').append("<%= j render 'project_list', project_list: @project_list %>")
 $('#new-project form').remove();
+$('#new-project a').show();
