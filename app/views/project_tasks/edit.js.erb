@@ -1,0 +1,6 @@
+alert("edit");
+$('#new-task form').remove();
+$('.btn-danger').bind('ajax:success', function(){
+  $(this).closest('tr').remove();
+});
+$('#new-task a').hide().parent().append("<%= j render 'form', project_task: @project_task %>")

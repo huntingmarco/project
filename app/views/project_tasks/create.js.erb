@@ -1,1 +1,3 @@
-$('table tr:last').after("<%= j render 'project_tasks/new', project_task: @project_task %>");
+$('#new-task form').remove();
+$('#new-task a').show();
+$('#project_tasks_wrapper').append("<table id='<%= j @project_task.id %>'><tr></td><%= j render 'project_tasks/new', project_task: @project_task %></td></tr></table>");

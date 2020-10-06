@@ -23,17 +23,24 @@
   <th colspan="3"></th>
 </tr>
 </thead>
-<tr><td style="width: 350px;"></td><td style="width: 350px;"></td><td style="width: 350px;"></td></tr></table>
- <%= render @project_list.project_tasks %>
+<tr><td style="width: 350px;"></td><td style="width: 350px;"></td><td style="width: 350px;"></td></tr>
+
+</table>
+<%= render @project_list.project_tasks %>
+ 
+
  <div id="form">
-  <%= render "project_tasks/form" %>
+  
  </div>
 
 
 </div>
 <hr>
 <br>
-
-
+<div id="new-task">
+<%= link_to("Add New Task", new_project_list_project_task_path(@project_list, project_list_id: @project_list.id), remote: true, 
+          class: "btn btn-xs btn-success") %>
+</div>
+<br>
 <%= link_to("Back", project_lists_path, 
           class: "btn btn-xs btn-warning") %>
