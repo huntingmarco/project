@@ -1,4 +1,4 @@
-alert("to update");
+
 $('table#<%= j @project_task.id %>').remove();
 $('#project_tasks_wrapper').append("<table id='<%= j @project_task.id %>'><tr></td><%= j render 'project_tasks/new', project_task: @project_task %></td></tr></table>");
 $('#new-task form').remove();
