@@ -8,6 +8,8 @@ RSpec.describe ProjectListsController, "index action" do
       assert_response :success
     end
 
+   
+
     #it "assigns @project_lists" do
     #  project_list = ProjectLists.create(title: “Test user”)
     #  get :index
