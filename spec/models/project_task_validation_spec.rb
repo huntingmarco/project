@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ProjectTask, :type => :model do
 
+  describe "Project task model test" do
   subject {
     described_class.new(content: "Anything",
                         deadline: DateTime.now,
@@ -23,6 +24,6 @@ RSpec.describe ProjectTask, :type => :model do
     expect(subject).to_not be_valid
   end
 
-
+end
 
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProjectList, :type => :model do
-
+  describe "Project List model test" do
   subject {
     described_class.new(title: "Anything",
                         description: "Lorem ipsum",
@@ -26,6 +26,6 @@ RSpec.describe ProjectList, :type => :model do
     it { should belong_to(:user).without_validating_presence }
     it { should have_many(:project_tasks).dependent(:destroy) }
   end
-
+end
   
 end

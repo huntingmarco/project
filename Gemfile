@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   #gem 'factory_bot_rails', '~> 6.1'
   gem 'capybara', '~> 3.33'
+  gem 'factory_girl_rails'
 end
 
 group :development do

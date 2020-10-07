@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Home page" do
+RSpec.describe "Home page matcing" do
 
     it "it displays the name of the app" do
       visit('/project_lists')
@@ -10,5 +10,6 @@ RSpec.describe "Home page" do
       expect(page).to have_content('Email')
     end
 
+  
  
   end
